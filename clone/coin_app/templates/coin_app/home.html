@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+</head>
+<body>
+<h1>Connected!!!!!!!</h1>
+{% if access_crypto %}
+<table>
+    <tr>
+        <th>Crypto Name</th>
+        <th>Symbol</th>
+        <th>Price</th>
+    </tr>
+    {% for bbc in access_crypto %}
+    <tr>
+        <td>{{ bbc.name }}</td>
+        <td>{{ bbc.symbol }}</td>
+        <td>{{ bbc.price }}</td>
+    </tr>
+    {% endfor %}
+</table>
+{% else %}
+<p>NO CRYPTO TO DISPLAY</p>
+
+{% endif %}
+</body>
+</html>
