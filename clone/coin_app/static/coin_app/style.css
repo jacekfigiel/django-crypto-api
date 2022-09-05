@@ -1,0 +1,10 @@
+table, th, td{
+    border: 2px solid black;
+    color: white;
+}
+h1{
+    color: green;
+}
+body{
+    background-color: #002080;
+}

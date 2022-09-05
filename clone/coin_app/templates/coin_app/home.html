@@ -1,8 +1,10 @@
 <!DOCTYPE html>
+{% load static %}
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Home</title>
+    <link rel="stylesheet" href="{% static 'coin_app/style.css' %}">
 </head>
 <body>
 <h1>Connected!!!!!!!</h1>
@@ -12,12 +14,22 @@
         <th>Crypto Name</th>
         <th>Symbol</th>
         <th>Price</th>
+        <th>Percent Change 24h</th>
+        <th>Percent Change 7d</th>
+        <th>Market Cap</th>
+        <th>Volume 24h</th>
+        <th>Circulating Supply</th>
     </tr>
     {% for bbc in access_crypto %}
     <tr>
         <td>{{ bbc.name }}</td>
         <td>{{ bbc.symbol }}</td>
-        <td>{{ bbc.price }}</td>
+        <td>{{ bbc.price }}$</td>
+        <td>{{ bbc.percent_change_24h }}$</td>
+        <td>{{ bbc.percent_change_7d }}$</td>
+        <td>{{ bbc.market_cap }}$</td>
+        <td>{{ bbc.volume_24h }}$</td>
+        <td>{{ bbc.circulating_supply }} {{ bbc.symbol }}</td>
     </tr>
     {% endfor %}
 </table>
