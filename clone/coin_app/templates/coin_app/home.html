@@ -6,36 +6,49 @@
     <title>Home</title>
     <link rel="stylesheet" href="{% static 'coin_app/style.css' %}">
 </head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <body>
-<h1>Connected!!!!!!!</h1>
-{% if access_crypto %}
-<table>
-    <tr>
-        <th>Crypto Name</th>
-        <th>Symbol</th>
-        <th>Price</th>
-        <th>Percent Change 24h</th>
-        <th>Percent Change 7d</th>
-        <th>Market Cap</th>
-        <th>Volume 24h</th>
-        <th>Circulating Supply</th>
-    </tr>
-    {% for bbc in access_crypto %}
-    <tr>
-        <td>{{ bbc.name }}</td>
-        <td>{{ bbc.symbol }}</td>
-        <td>{{ bbc.price }}$</td>
-        <td>{{ bbc.percent_change_24h }}$</td>
-        <td>{{ bbc.percent_change_7d }}$</td>
-        <td>{{ bbc.market_cap }}$</td>
-        <td>{{ bbc.volume_24h }}$</td>
-        <td>{{ bbc.circulating_supply }} {{ bbc.symbol }}</td>
-    </tr>
-    {% endfor %}
-</table>
-{% else %}
-<p>NO CRYPTO TO DISPLAY</p>
+{% csrf_token %}
+<div class="topnav">
+    <a class="active" href="#home">Home</a>
+    <a href="#about">About</a>
+    <input name="q" type="text" placeholder="Search..">
+    </form>
 
-{% endif %}
+</div>
+
+
+    <div class="h-100 d-inline-block">
+    <h1>Connected!!!!!!!</h1>
+    {% if access_crypto %}
+    <table>
+        <tr>
+            <th>Crypto Name</th>
+            <th>Symbol</th>
+            <th>Price</th>
+            <th>Percent Change 24h</th>
+            <th>Percent Change 7d</th>
+            <th>Market Cap</th>
+            <th>Volume 24h</th>
+            <th>Circulating Supply</th>
+        </tr>
+        {% for bbc in access_crypto %}
+        <tr>
+            <td><a href="/coin_app/detail_crypto/{{bbc.id}}">{{ bbc.name }}</a></td>
+            <td>{{ bbc.symbol }}</td>
+            <td>{{ bbc.price }}$</td>
+            <td>{{ bbc.percent_change_24h }}$</td>
+            <td>{{ bbc.percent_change_7d }}$</td>
+            <td>{{ bbc.market_cap }}$</td>
+            <td>{{ bbc.volume_24h }}$</td>
+            <td>{{ bbc.circulating_supply }} {{ bbc.symbol }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    {% else %}
+    <p>NO CRYPTO TO DISPLAY</p>
+
+    {% endif %}
+    </div>
 </body>
 </html>
