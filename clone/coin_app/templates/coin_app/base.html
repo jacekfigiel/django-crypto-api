@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+{% load static %}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+    <link rel="stylesheet" href="{% static 'coin_app/style.css' %}">
+    <title>Title</title>
+</head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<body>
+{% csrf_token %}
+<div class="topnav">
+    <a href="coin_app/home.html">Home</a>
+    <a href="#about">About</a>
+    <input name="q" type="text" placeholder="Search..">
+
+</div>
+
+</body>
+</html>

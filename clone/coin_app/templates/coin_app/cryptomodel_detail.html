@@ -6,7 +6,15 @@
 </head>
 <body>
 <h2>Detail view</h2>
-{{cryptomodel}}
+<h2>Name : {{crypto_model.name}}</h2>
+<h2>Symbol : {{ crypto_model.symbol }}</h2>
+<h2>Price : {{ crypto_model.price }}$</h2>
+<h2>Percent price change in 24h : {{ crypto_model.percent_change_24h }}$</h2>
+<h2>Percent price change in 7d : {{ crypto_model.percent_change_7d }}$</h2>
+<h2>Market cap : {{ crypto_model.market_cap }}$</h2>
+<h2>Volume 24h : {{ crypto_model.volume_24h }}$</h2>
+<h2>Circular supply : {{ crypto_model.circulating_supply }} {{ crypto_model.symbol }}</h2>
+
 
 </body>
 </html>
