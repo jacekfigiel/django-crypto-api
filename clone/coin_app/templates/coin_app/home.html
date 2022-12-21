@@ -22,25 +22,25 @@
     {% if access_crypto %}
     <table>
         <tr>
-            <th>Crypto Name</th>
-            <th>Symbol</th>
-            <th>Price</th>
-            <th>Percent Change 24h</th>
-            <th>Percent Change 7d</th>
-            <th>Market Cap</th>
-            <th>Volume 24h</th>
-            <th>Circulating Supply</th>
+            <th><a href="/coin_app/home">Crypto Name</a></th>
+            <th><a href="/coin_app/home">Symbol</a></th>
+            <th><a href="/coin_app/home_price">Price</a></th>
+            <th><a href="/coin_app/home_percent_change_24h">Percent Change 24h</a></th>
+            <th><a href="/coin_app/home_percent_change_7d">Percent Change 7d</a></th>
+            <th><a href="/coin_app/home_market_cap">Market Cap</a></th>
+            <th><a href="/coin_app/home_volume_24h">Volume 24h</a></th>
+            <th><a href="/coin_app/home_circulating_supply">Circulating Supply</a></th>
         </tr>
         {% for bbc in access_crypto %}
         <tr>
             <td><a href="/coin_app/detail_crypto/{{bbc.id}}">{{ bbc.name }}</a></td>
-            <td>{{ bbc.symbol }}</td>
-            <td>{{ bbc.price }}$</td>
-            <td>{{ bbc.percent_change_24h }}$</td>
-            <td>{{ bbc.percent_change_7d }}$</td>
-            <td>{{ bbc.market_cap }}$</td>
-            <td>{{ bbc.volume_24h }}$</td>
-            <td>{{ bbc.circulating_supply }} {{ bbc.symbol }}</td>
+            <td><a href="/coin_app/detail_crypto/{{bbc.id}}">{{ bbc.symbol }}</a></td>
+            <td><a href="/coin_app/detail_crypto/{{bbc.id}}">{{ bbc.price }}$</a></td>
+            <td><a href="/coin_app/detail_crypto/{{bbc.id}}">{{ bbc.percent_change_24h }}$</a></td>
+            <td><a href="/coin_app/detail_crypto/{{bbc.id}}">{{ bbc.percent_change_7d }}$</a></td>
+            <td><a href="/coin_app/detail_crypto/{{bbc.id}}">{{ bbc.market_cap }}$</a></td>
+            <td><a href="/coin_app/detail_crypto/{{bbc.id}}">{{ bbc.volume_24h }}$</a></td>
+            <td><a href="/coin_app/detail_crypto/{{bbc.id}}">{{ bbc.circulating_supply }} {{ bbc.symbol }}</a></td>
         </tr>
         {% endfor %}
     </table>
