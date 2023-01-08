@@ -3,6 +3,14 @@ from django.views.generic import DetailView
 from ..models import CryptoModel
 # Create your views here.
 
+def search(request):
+    search_query = ''
+    if request.GET.get('q'):
+        search_query = request.GET.get('q')
+    posts = CryptoModel.objects.filter(name__icontains=search_query)
+    context={'posts': posts, 'search_query': search_query}
+    return render(request,'coin_app/search.html', context)
+
 
 def home(request):
     crypto_list = CryptoModel.objects.order_by("name")
