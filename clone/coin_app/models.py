@@ -6,9 +6,9 @@ from django.db import models
 class CryptoModel(models.Model):
     name = models.TextField(max_length=100)
     symbol = models.TextField(max_length=100)
-    price = models.IntegerField()
-    percent_change_24h = models.IntegerField()
-    percent_change_7d = models.IntegerField()
+    price = models.DecimalField(max_digits=20, decimal_places=2)
+    percent_change_24h = models.DecimalField(max_digits=20, decimal_places=2)
+    percent_change_7d = models.DecimalField(max_digits=20, decimal_places=2)
     market_cap = models.IntegerField()
     volume_24h = models.IntegerField()
     circulating_supply = models.IntegerField()

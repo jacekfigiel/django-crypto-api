@@ -5,9 +5,9 @@ class Crypto:
                  circulating_supply: int):
         self.name = name
         self.symbol = symbol
-        self.price = round(price, 2)
-        self.percent_change_24h = round(percent_change_24h, 2)
-        self.percent_change_7d = round(percent_change_7d, 2)
+        self.price = price
+        self.percent_change_24h = percent_change_24h
+        self.percent_change_7d = percent_change_7d
         self.market_cap = market_cap
         self.volume_24h = volume_24h
         self.circulating_supply = circulating_supply
