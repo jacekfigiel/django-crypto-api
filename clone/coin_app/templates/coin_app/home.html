@@ -39,11 +39,11 @@
         <tr>
             <td><a href="/coin_app/detail_crypto/{{bbc.id}}">{{ bbc.name }}</a></td>
             <td><a href="/coin_app/detail_crypto/{{bbc.id}}">{{ bbc.symbol }}</a></td>
-            <td><a href="/coin_app/detail_crypto/{{bbc.id}}">{{ bbc.price }}$</a></td>
-            <td><a href="/coin_app/detail_crypto/{{bbc.id}}">{{ bbc.percent_change_24h }}$</a></td>
-            <td><a href="/coin_app/detail_crypto/{{bbc.id}}">{{ bbc.percent_change_7d }}$</a></td>
-            <td><a href="/coin_app/detail_crypto/{{bbc.id}}">{{ bbc.market_cap }}$</a></td>
-            <td><a href="/coin_app/detail_crypto/{{bbc.id}}">{{ bbc.volume_24h }}$</a></td>
+            <td><a href="/coin_app/detail_crypto/{{bbc.id}}">${{ bbc.price }}</a></td>
+            <td><a href="/coin_app/detail_crypto/{{bbc.id}}">{{ bbc.percent_change_24h }}%</a></td>
+            <td><a href="/coin_app/detail_crypto/{{bbc.id}}">{{ bbc.percent_change_7d }}%</a></td>
+            <td><a href="/coin_app/detail_crypto/{{bbc.id}}">${{ bbc.market_cap }}</a></td>
+            <td><a href="/coin_app/detail_crypto/{{bbc.id}}">${{ bbc.volume_24h }}</a></td>
             <td><a href="/coin_app/detail_crypto/{{bbc.id}}">{{ bbc.circulating_supply }} {{ bbc.symbol }}</a></td>
         </tr>
         {% endfor %}
