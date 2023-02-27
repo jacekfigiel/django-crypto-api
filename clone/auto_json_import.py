@@ -21,25 +21,25 @@ def make_request():
     response = requests.request("GET", url, headers=headers, data=payload)
 
     if response.status_code == 200:
-        print(response.text)
+        json_data = json.loads(response.text)
         with open(file_path, "w") as outfile:
-            json.dump(response, outfile)
+            json.dump(json_data, outfile)
     else:
         print("Request failed")
 
 
-def schedule_task():
-    schedule.every(10).seconds.do(make_request)
-    #schedule.every(10).minutes.do(make_request)
-
-    while True:
-        schedule.run_pending()
-        time.sleep(1)
-
-# start the scheduler when the app is ready
-schedule_task()
-
-# start the scheduler when the app is ready
-# def ready(self):
-#     super().ready()
-#     schedule_task()
+make_request()
+# def schedule_task():
+#     #schedule.every(10).minutes.do(make_request)
+#
+#     while True:
+#         schedule.run_pending()
+#         time.sleep(1)
+#
+# # start the scheduler when the app is ready
+# schedule_task()
+#
+# # start the scheduler when the app is ready
+# # def ready(self):
+# #     super().ready()
+# #     schedule_task()

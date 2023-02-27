@@ -8,10 +8,18 @@ django.setup()
 from crypto import Crypto
 from coin_app.models import CryptoModel
 import json
+import re
+from django.core.management import call_command
 
 
 def parse():
-    file = open('test_data.json')
+    directory = "C:/Users/agafi/IdeaProjects/coinmarketcap_clone/clone/json_files"
+    files = os.listdir(directory)
+    pattern = r'data_\d{4}-\d{2}-\d{2}'
+    json_files = [f for f in files if re.search(pattern, f)]
+    json_files.sort(reverse=True)
+    latest_file = os.path.join(directory, json_files[0])
+    file = open(latest_file)
     data = json.load(file)
     result = []
     for i in data['data']:
@@ -42,6 +50,8 @@ def populate():
 
 
 if __name__ == '__main__':
+    print("clearing database")
+    call_command("flush", interactive=False)
     print("populating script!")
     populate()
     print("populating complete!!")
