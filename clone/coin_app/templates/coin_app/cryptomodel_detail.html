@@ -1,10 +1,8 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends "base.html" %}
+
+{% block content %}
+
 <h2>Detail view</h2>
 <h2>Name : {{crypto_model.name}}</h2>
 <h2>Symbol : {{ crypto_model.symbol }}</h2>
@@ -16,5 +14,5 @@
 <h2>Circular supply : {{ crypto_model.circulating_supply }} {{ crypto_model.symbol }}</h2>
 
 
-</body>
-</html>
+
+{% endblock %}

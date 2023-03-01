@@ -1,10 +1,8 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body> 
+{% extends "base.html" %}
+
+{% block content %}
+
 {% if posts %}
 <h2>Search result</h2>
     {% for crypto_model in posts %}    
@@ -24,5 +22,5 @@
     <h2>No crypto found!!!</h2>
 {% endif%}
 
-</body>
-</html>
+{% endblock %}
+
