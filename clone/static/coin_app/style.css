@@ -11,3 +11,7 @@ a:link {
 a:hover {
   color: red;
 }
+form {
+  display: flex;
+  align-items: center;
+}

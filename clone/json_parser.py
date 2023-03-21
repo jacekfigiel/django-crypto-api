@@ -15,7 +15,7 @@ from django.core.management import call_command
 def parse():
     directory = "C:/Users/agafi/IdeaProjects/coinmarketcap_clone/clone/json_files"
     files = os.listdir(directory)
-    pattern = r'data_\d{4}-\d{2}-\d{2}'
+    pattern = r'crypto_date_\d{4}-\d{2}-\d{2}'
     json_files = [f for f in files if re.search(pattern, f)]
     json_files.sort(reverse=True)
     latest_file = os.path.join(directory, json_files[0])

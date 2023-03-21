@@ -64,6 +64,12 @@ def home_circulating_supply(request):
     return render(request, "coin_app/home.html", context=crypto_dict)
 
 
+def top_gainers(request):
+    crypto_list = CryptoModel.objects.order_by("-percent_change_24h")[:5]
+    crypto_dict = {"five_crypto": crypto_list}
+    return render(request, "coin_app/home.html", context=crypto_dict)
+
+
 class CryptoDetailView(DetailView):
     context_object_name = "crypto_model"
     model = CryptoModel

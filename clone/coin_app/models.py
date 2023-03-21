@@ -17,3 +17,8 @@ class CryptoModel(models.Model):
         return f"{self.symbol}, {self.name}, \n{self.price}$ " \
                f"\n{self.percent_change_24h}%, \n{self.percent_change_7d}% " \
                f"\n{self.market_cap}$, \n{self.volume_24h}$, \n{self.circulating_supply} {self.symbol}"
+
+
+class PreciousMetalsModel(models.Model):
+    symbol = models.TextField(max_length=20)
+    price = models.DecimalField(max_digits=20, decimal_places=10)
