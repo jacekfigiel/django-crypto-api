@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h1>Precious Metals List</h1>
+  <ul>
+    {% for metal in metal_list %}
+      <li>{{ metal.code }} - {{ metal.rate }}</li>
+    {% empty %}
+      <li>No metals available.</li>
+    {% endfor %}
+  </ul>
+{% endblock %}
