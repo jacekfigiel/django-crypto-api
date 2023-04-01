@@ -1,3 +1,6 @@
+import decimal
+
+
 class Crypto:
 
     def __init__(self, name: str, symbol: str, price: int, percent_change_24h: int,
@@ -18,4 +21,12 @@ class Crypto:
                f"\n{self.market_cap}$, \n{self.volume_24h}$, \n{self.circulating_supply} {self.symbol}"
 
 
+class PreciousMetals:
 
+    def __init__(self, code: str, rate: int):
+        self.code = code
+        self.rate = rate
+
+    def __str__(self):
+        return f"{self.code}" \
+                f"\n{self.rate}"

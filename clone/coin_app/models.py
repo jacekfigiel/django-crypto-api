@@ -20,5 +20,8 @@ class CryptoModel(models.Model):
 
 
 class PreciousMetalsModel(models.Model):
-    symbol = models.TextField(max_length=20)
-    price = models.DecimalField(max_digits=20, decimal_places=10)
+    code = models.TextField(max_length=20)
+    rate = models.DecimalField(max_digits=20, decimal_places=10)
+
+    def __str__(self):
+        return f"{self.code}-{self.rate}"
