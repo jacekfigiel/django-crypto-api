@@ -56,7 +56,6 @@ def parse_metals():
     json_files = [f for f in files if re.search(pattern, f)]
     json_files.sort(reverse=True)
     latest_file = os.path.join(directory, json_files[0])
-    #file = open(latest_file)
 
     with open(latest_file) as f:
         data = json.load(f)
@@ -68,19 +67,6 @@ def parse_metals():
         p = PreciousMetals(code, rate)
         metals.append(p)
     return metals
-
-    #data = json.load(file)
-    # result_metal = []
-    # metals = []
-    # for key, val in data["rates"].items():
-    #     result_metal.append(key)
-    #     result_metal.append(val)
-    #     for i in range(0, len(result_metal), 2):
-    #         code = result_metal[i]
-    #         rate = result_metal[i+1]
-    #         p = PreciousMetals(code, rate)
-    #         metals.append(p)
-    # print(metals)
 
 
 def populate_metal():

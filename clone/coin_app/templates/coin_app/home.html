@@ -1,52 +1,19 @@
 <!DOCTYPE html>
-{% load static %}
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Home</title>
-    <link rel="stylesheet" href="{% static 'coin_app/style.css' %}">
-</head>
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+{% extends "base.html" %}
 
-<body>
-{% csrf_token %}
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="{% url 'coin_app:home_view' %}">Home</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-                <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">Link</a>
-            </li>
-
-        </ul>
-        <form class="search-bar s-active" action={% url 'coin_app:search_result' %} method='GET'>
-        <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search" name="q" value={{search_query}}>
-        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-        </form>
-    </div>
-</nav>
+{% block content %}
 
 <div class="row">
     <div class="col-md-6">
-            <table class="table">
-                <tr>
-                    <th>Crypto Name</th>
-                    <th>Percent Change 24h</th>
-                </tr>
-                <tr>
-                    {% for obj in five_crypto %}
-                    <th>{{ obj.name }}</th>
-                    {% endfor %}
-                </tr>
-            </table>
+        <table class="table">
+            <h1>Precious Metals</h1>
+            <ul>
+                {% for metal in access_metal %}
+                <li>{{ metal.code }} - {{ metal.rate }}</li>
+                {% endfor %}
+            </ul>
+        </table>
+
     </div>
     <div class="col-md-6">
         {% if access_crypto %}
@@ -102,5 +69,6 @@
 
     {% endif %}
     </div>
-</body>
-</html>
+
+
+{% endblock %}
