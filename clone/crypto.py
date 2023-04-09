@@ -30,3 +30,15 @@ class PreciousMetals:
     def __str__(self):
         return f"{self.code}" \
                 f"\n{self.rate}"
+
+
+class News:
+
+    def __init__(self, title: str, author: str, published, url):
+        self.title = title
+        self.author = author
+        self.published = published
+        self.url = url
+
+    def __str__(self):
+        return f"{self.title} {self.author} {self.published} {self.url}"

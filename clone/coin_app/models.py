@@ -25,3 +25,14 @@ class PreciousMetalsModel(models.Model):
 
     def __str__(self):
         return f"{self.code}-{self.rate}"
+
+
+class NewsModel(models.Model):
+    title = models.TextField(max_length=200)
+    author = models.TextField(max_length=100)
+    published = models.DateField()
+    url = models.URLField()
+
+    def __str__(self):
+        return f"{self.title} {self.author} {self.published} {self.url}"
+    
