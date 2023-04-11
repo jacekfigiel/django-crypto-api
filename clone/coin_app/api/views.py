@@ -16,8 +16,8 @@ def search(request):
     return render(request, 'coin_app/search.html', context)
 
 
-def home(request):
-    crypto_list = CryptoModel.objects.order_by("name")
+def get_ordered_lists(order_by):
+    crypto_list = CryptoModel.objects.order_by(order_by)
     metal_list = PreciousMetalsModel.objects.order_by("rate")
     news_list = NewsModel.objects.order_by("-published")[:5]
     context = {
@@ -25,76 +25,46 @@ def home(request):
         "access_metal": metal_list,
         "access_news": news_list
     }
+    return context
+
+
+def home(request):
+    context = get_ordered_lists("name")
     return render(request, "coin_app/home.html", context=context)
 
 
 def home_symbol(request):
-    crypto_list = CryptoModel.objects.order_by("symbol")
-    metal_list = PreciousMetalsModel.objects.order_by("rate")
-    context = {
-        "access_crypto": crypto_list,
-        "access_metal": metal_list
-    }
+    context = get_ordered_lists("symbol")
     return render(request, "coin_app/home.html", context=context)
 
 
 def home_price(request):
-    crypto_list = CryptoModel.objects.order_by("-price")
-    metal_list = PreciousMetalsModel.objects.order_by("rate")
-    context = {
-        "access_crypto": crypto_list,
-        "access_metal": metal_list
-    }
+    context = get_ordered_lists("price")
     return render(request, "coin_app/home.html", context=context)
 
 
 def home_percent_change_24h(request):
-    crypto_list = CryptoModel.objects.order_by("-percent_change_24h")
-    metal_list = PreciousMetalsModel.objects.order_by("rate")
-    context = {
-        "access_crypto": crypto_list,
-        "access_metal": metal_list
-    }
+    context = get_ordered_lists("-percent_change_24h")
     return render(request, "coin_app/home.html", context=context)
 
 
 def home_percent_change_7d(request):
-    crypto_list = CryptoModel.objects.order_by("-percent_change_7d")
-    metal_list = PreciousMetalsModel.objects.order_by("rate")
-    context = {
-        "access_crypto": crypto_list,
-        "access_metal": metal_list
-    }
+    context = get_ordered_lists("-percent_change_7d")
     return render(request, "coin_app/home.html", context=context)
 
 
 def home_market_cap(request):
-    crypto_list = CryptoModel.objects.order_by("-market_cap")
-    metal_list = PreciousMetalsModel.objects.order_by("rate")
-    context = {
-        "access_crypto": crypto_list,
-        "access_metal": metal_list
-    }
+    context = get_ordered_lists("-market_cap")
     return render(request, "coin_app/home.html", context=context)
 
 
 def home_volume_24h(request):
-    crypto_list = CryptoModel.objects.order_by("-volume_24h")
-    metal_list = PreciousMetalsModel.objects.order_by("rate")
-    context = {
-        "access_crypto": crypto_list,
-        "access_metal": metal_list
-    }
+    context = get_ordered_lists("-volume_24h")
     return render(request, "coin_app/home.html", context=context)
 
 
 def home_circulating_supply(request):
-    crypto_list = CryptoModel.objects.order_by("-circulating_supply")
-    metal_list = PreciousMetalsModel.objects.order_by("rate")
-    context = {
-        "access_crypto": crypto_list,
-        "access_metal": metal_list
-    }
+    context = get_ordered_lists("-circulating_supply")
     return render(request, "coin_app/home.html", context=context)
 
 
