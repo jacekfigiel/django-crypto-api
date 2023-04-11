@@ -2,7 +2,7 @@ from django.urls import path
 from .views import home, CryptoDetailView,\
     home_price, home_symbol, home_percent_change_24h, home_percent_change_7d,\
     home_market_cap, home_volume_24h, home_circulating_supply,\
-    search, top_gainers, PreciousMetalsListView
+    search, PreciousMetalsListView, NewsListView
 
 app_name = "coin_app"
 
@@ -18,5 +18,5 @@ urlpatterns = [
     path("detail_crypto/<int:pk>", CryptoDetailView.as_view(), name="detail_view"),
     path("search/", search, name='search_result'),
     path('precious-metals/', PreciousMetalsListView.as_view(), name='precious-metals-list'),
-    path("top_gainers/", top_gainers, name="top_gainers")
+    path('news/', NewsListView.as_view(), name='news_list')
 ]

@@ -18,19 +18,12 @@
     <div class="col-md-6">
         {% if access_crypto %}
         <table class="table">
-            <thead>
-            <tr>
-                <th>Crypto Name</th>
-                <th>Price</th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr>
-                {% for obj in access_crypto|slice:5 %}
-                    <th>{{ obj.name }}</th>
+            <h1>News</h1>
+            <ul>
+                {% for news in access_news %}
+                <li><a href="{{ news.url }}">{{ news.title }}</a> </li>
                 {% endfor %}
-            </tr>
-            </tbody>
+            </ul>
         </table>
         {% endif %}
     </div>

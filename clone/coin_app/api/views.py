@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from django.views.generic import DetailView, ListView
-from ..models import CryptoModel, PreciousMetalsModel
+from ..models import CryptoModel, PreciousMetalsModel, NewsModel
 
 
 # Create your views here.
@@ -19,9 +19,11 @@ def search(request):
 def home(request):
     crypto_list = CryptoModel.objects.order_by("name")
     metal_list = PreciousMetalsModel.objects.order_by("rate")
+    news_list = NewsModel.objects.order_by("-published")[:5]
     context = {
         "access_crypto": crypto_list,
-        "access_metal": metal_list
+        "access_metal": metal_list,
+        "access_news": news_list
     }
     return render(request, "coin_app/home.html", context=context)
 
@@ -96,12 +98,6 @@ def home_circulating_supply(request):
     return render(request, "coin_app/home.html", context=context)
 
 
-def top_gainers(request):
-    crypto_list = CryptoModel.objects.order_by("-percent_change_24h")[:5]
-    crypto_dict = {"five_crypto": crypto_list}
-    return render(request, "coin_app/home.html", context=crypto_dict)
-
-
 class CryptoDetailView(DetailView):
     context_object_name = "crypto_model"
     model = CryptoModel
@@ -112,3 +108,10 @@ class PreciousMetalsListView(ListView):
     template_name = 'coin_app/precious_metals_list.html'
     context_object_name = 'metal_list'
     ordering = ['rate']
+
+
+class NewsListView(ListView):
+    model = NewsModel
+    template_name = 'coin_app/news.html'
+    context_object_name = "news_list"
+    ordering = ['-published']
