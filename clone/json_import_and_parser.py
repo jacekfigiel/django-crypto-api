@@ -12,12 +12,13 @@ import requests
 from crypto import Crypto, PreciousMetals, News
 from coin_app.models import CryptoModel, PreciousMetalsModel, NewsModel
 from django.core.management import call_command
+from decouple import config
 
 
 def get_crypto_data():
-    url = "https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest?CMC_PRO_API_KEY=3fa9c876-5dee-4ec7-95c6-d88ca297978c"
+    url = config('URL_CRYPTO')
     headers = {
-        'CMC_PRO_API_KEY': '3fa9c876-5dee-4ec7-95c6-d88ca297978c'
+        'CMC_PRO_API_KEY': config('CMC_PRO_API_KEY')
     }
     response = requests.get(url, headers=headers)
     if response.status_code == 200:
@@ -36,7 +37,6 @@ def get_crypto_data():
                                 percent_change_7d, market_cap, volume_24h,
                                 circulating_supply)
             crypto_data.append(crypto_obj)
-            print(crypto_obj)
         return crypto_data
     else:
         print("Request failed - crypto")
@@ -61,7 +61,7 @@ def populate_crypto():
 
 
 def make_request_precious_metals():
-    url = "https://api.metalpriceapi.com/v1/latest?api_key=a62cfed78fadac1191a9f88c82bb1faf&base=USD&currencies=XAG,XAU,XPD,XPT"
+    url = config('URL_METALS')
 
     payload = {}
     headers = {}
@@ -91,7 +91,7 @@ def populate_metal():
 
 
 def make_request_news():
-    url = "https://newsapi.org/v2/everything?q=cryptocurrency&apiKey=51c8125aa88446f0a22818fef806e097"
+    url = config('URL_NEWS')
 
     payload = {}
     headers = {}
