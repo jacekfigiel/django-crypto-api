@@ -21,7 +21,7 @@ class CryptoModel(models.Model):
 
 class PreciousMetalsModel(models.Model):
     code = models.TextField(max_length=20)
-    rate = models.DecimalField(max_digits=20, decimal_places=10)
+    rate = models.DecimalField(max_digits=8, decimal_places=2)
 
     def __str__(self):
         return f"{self.code}-{self.rate}"

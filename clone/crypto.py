@@ -23,7 +23,7 @@ class Crypto:
 
 class PreciousMetals:
 
-    def __init__(self, code: str, rate: int):
+    def __init__(self, code: str, rate: float):
         self.code = code
         self.rate = rate
 

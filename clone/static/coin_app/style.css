@@ -7,11 +7,16 @@ h1{
 }
 a:link {
   color: white;
+  text-decoration: none;
 }
 a:hover {
   color: red;
+  text-decoration: none;
 }
 form {
   display: flex;
   align-items: center;
+}
+.link {
+  text-decoration: none;
 }

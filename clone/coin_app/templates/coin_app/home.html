@@ -7,9 +7,10 @@
     <div class="col-md-6">
         <table class="table">
             <h1>Precious Metals</h1>
+            <p>Price per once</p>
             <ul>
                 {% for metal in access_metal %}
-                <li>{{ metal.code }} - {{ metal.rate }}</li>
+                <li>{{ metal.code }} - ${{ metal.rate }}</li>
                 {% endfor %}
             </ul>
         </table>

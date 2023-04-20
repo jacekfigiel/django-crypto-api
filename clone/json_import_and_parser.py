@@ -84,7 +84,7 @@ def make_request_precious_metals():
 def populate_metal():
     for e in make_request_precious_metals():
         code = e.code
-        rate = e.rate
+        rate = 1 / e.rate
 
         metal_created = PreciousMetalsModel.objects.get_or_create(
             code=code, rate=rate)
@@ -126,12 +126,11 @@ def populate_news():
 if __name__ == '__main__':
     print("clearing database")
     call_command("flush", interactive=False)
-    get_crypto_data()
-    make_request_precious_metals()
-    make_request_news()
-    make_request_news()
     print("populating script!")
+    get_crypto_data()
     populate_crypto()
+    make_request_precious_metals()
     populate_metal()
+    make_request_news()
     populate_news()
     print("populating complete!!")
