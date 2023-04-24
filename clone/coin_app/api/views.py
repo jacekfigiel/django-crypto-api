@@ -72,6 +72,32 @@ class CryptoDetailView(DetailView):
     context_object_name = "crypto_model"
     model = CryptoModel
 
+#
+# class CryptoView(ListView):
+#     model = CryptoModel
+#     template_name = 'coin_app/crypto_list.html'
+#     context_object_name = 'crypto_list'
+#     ordering = ['market_cap']
+def get_crypto_ordered_lists(order_by):
+    crypto_list = CryptoModel.objects.order_by(order_by)
+    context = {
+        "crypto_list": crypto_list,
+    }
+    return context
+
+
+class CryptoView(ListView):
+    model = CryptoModel
+    template_name = 'coin_app/crypto_list.html'
+    context_object_name = 'crypto_list'
+    ordering = ['market_cap']
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        order_by = self.request.GET.get('order_by', 'name')
+        context.update(get_crypto_ordered_lists(order_by))
+        return context
+
 
 class PreciousMetalsListView(ListView):
     model = PreciousMetalsModel

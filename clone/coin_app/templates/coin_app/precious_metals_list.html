@@ -2,9 +2,10 @@
 
 {% block content %}
   <h1>Precious Metals List</h1>
+  <p>Price per once</p>
   <ul>
     {% for metal in metal_list %}
-      <li>{{ metal.code }} - {{ metal.rate }}</li>
+      <li>{{ metal.code }} - ${{ metal.rate }}</li>
     {% empty %}
       <li>No metals available.</li>
     {% endfor %}
