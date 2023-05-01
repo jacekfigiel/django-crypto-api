@@ -13,7 +13,6 @@ from crypto import Crypto, PreciousMetals, News
 from coin_app.models import CryptoModel, PreciousMetalsModel, NewsModel
 from django.core.management import call_command
 from decouple import config
-import time
 
 
 def get_crypto_data():
