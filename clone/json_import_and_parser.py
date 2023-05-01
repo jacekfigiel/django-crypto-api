@@ -13,6 +13,7 @@ from crypto import Crypto, PreciousMetals, News
 from coin_app.models import CryptoModel, PreciousMetalsModel, NewsModel
 from django.core.management import call_command
 from decouple import config
+import time
 
 
 def get_crypto_data():
@@ -54,7 +55,7 @@ def populate_crypto():
         volume_24h = entry.volume_24h
         circulating_supply = entry.circulating_supply
 
-        crypto_created = CryptoModel.objects.get_or_create(
+        crypto_created = CryptoModel.objects.update_or_create(
             name=name, symbol=symbol, price=price, percent_change_24h=percent_change_24h,
             percent_change_7d=percent_change_7d, market_cap=market_cap,
             volume_24h=volume_24h, circulating_supply=circulating_supply)
@@ -86,7 +87,7 @@ def populate_metal():
         code = e.code
         rate = 1 / e.rate
 
-        metal_created = PreciousMetalsModel.objects.get_or_create(
+        metal_created = PreciousMetalsModel.objects.update_or_create(
             code=code, rate=rate)
 
 
@@ -118,7 +119,7 @@ def populate_news():
         published = n.published
         url = n.url
 
-        news_created = NewsModel.objects.get_or_create(
+        news_created = NewsModel.objects.update_or_create(
             title=title, author=author, published=published, url=url
         )
 

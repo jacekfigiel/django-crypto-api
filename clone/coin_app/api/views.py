@@ -72,12 +72,7 @@ class CryptoDetailView(DetailView):
     context_object_name = "crypto_model"
     model = CryptoModel
 
-#
-# class CryptoView(ListView):
-#     model = CryptoModel
-#     template_name = 'coin_app/crypto_list.html'
-#     context_object_name = 'crypto_list'
-#     ordering = ['market_cap']
+
 def get_crypto_ordered_lists(order_by):
     crypto_list = CryptoModel.objects.order_by(order_by)
     context = {
