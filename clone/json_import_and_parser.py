@@ -44,6 +44,7 @@ def get_crypto_data():
 
 
 def populate_crypto():
+    CryptoModel.objects.all().delete()
     for entry in get_crypto_data():
         name = entry.name
         symbol = entry.symbol
@@ -82,6 +83,7 @@ def make_request_precious_metals():
 
 
 def populate_metal():
+    PreciousMetalsModel.objects.all().delete()
     for e in make_request_precious_metals():
         code = e.code
         rate = 1 / e.rate
@@ -112,6 +114,7 @@ def make_request_news():
 
 
 def populate_news():
+    NewsModel.objects.all().delete()
     for n in make_request_news():
         title = n.title
         author = n.author if n.author else 'Unknown'
@@ -125,7 +128,6 @@ def populate_news():
 
 if __name__ == '__main__':
     print("clearing database")
-    call_command("flush", interactive=False)
     print("populating script!")
     get_crypto_data()
     populate_crypto()
