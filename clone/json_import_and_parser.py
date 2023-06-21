@@ -136,3 +136,4 @@ if __name__ == '__main__':
     make_request_news()
     populate_news()
     print("populating complete!!")
+

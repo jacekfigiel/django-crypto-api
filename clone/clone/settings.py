@@ -57,7 +57,8 @@ ROOT_URLCONF = 'clone.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ['C:/Users/agafi/IdeaProjects/coinmarketcap_clone/clone/coin_app/templates/coin_app'],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
+        #'DIRS': ['C:/Users/agafi/IdeaProjects/coinmarketcap_clone/clone/coin_app/templates/coin_app'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -117,6 +118,10 @@ USE_TZ = True
 USE_THOUSAND_SEPARATOR = True
 
 USE_L10N = True
+
+SESSION_COOKIE_SECURE = True
+
+CSRF_COOKIE_SECURE = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.1/howto/static-files/

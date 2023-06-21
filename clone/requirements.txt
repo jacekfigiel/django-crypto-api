@@ -1,0 +1,4 @@
+Django==4.1
+djangorestframework==3.14.0
+python-decouple==3.8
+Requests==2.31.0
