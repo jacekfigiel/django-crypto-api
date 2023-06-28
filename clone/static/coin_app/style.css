@@ -1,12 +1,12 @@
 table, th, td{
     border: 2px solid black;
-    color: white;
+    color: black;
 }
 h1{
     color: green;
 }
 a:link {
-  color: white;
+  color: black;
   text-decoration: none;
 }
 a:hover {

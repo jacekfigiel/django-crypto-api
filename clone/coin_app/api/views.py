@@ -39,7 +39,7 @@ def home_symbol(request):
 
 
 def home_price(request):
-    context = get_ordered_lists("price")
+    context = get_ordered_lists("-price")
     return render(request, "coin_app/home.html", context=context)
 
 
