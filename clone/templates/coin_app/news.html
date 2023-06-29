@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>News</h1>
+    <ul>
+        {% for news in news_list %}
+            <li><a href="{{ news.url }}">{{news.title}}, {{news.author}}, {{news.published}} </a></li>
+        {% empty %}
+            <li>No news today.</li>
+        {% endfor %}
+    </ul>
+
+{% endblock %}
