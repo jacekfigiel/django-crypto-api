@@ -1,10 +1,16 @@
 FROM python:3.9-slim-buster
 
+RUN apt update
+RUN apt-get install cron -y
+RUN alias py=python
+
 WORKDIR /app
 
 COPY . /app
+COPY ./requirements.txt /app
 
 RUN pip install -r requirements.txt
 
-#CMD ["bash", "-c", "python manage.py runserver 0.0.0.0:8000 & python update_data.py"]
-CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]
+EXPOSE 8000
+
+CMD python manage.py runserver 0.0.0.0:8000

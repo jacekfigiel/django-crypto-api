@@ -1,20 +1,15 @@
 from django.shortcuts import render, redirect
 from django.views.generic import DetailView, ListView
 from ..models import CryptoModel, PreciousMetalsModel, NewsModel
+from django.db.models import Q
 
 
 # Create your views here.
-
 def search(request):
-    search_query = ''
-    if request.GET.get('q'):
-        search_query = request.GET.get('q')
-    else:
-        search_query = ("No coin found")
-    posts = CryptoModel.objects.filter(name__icontains=search_query, symbol__icontains=search_query)
+    search_query = request.GET.get('q', '')
+    posts = CryptoModel.objects.filter(Q(name__icontains=search_query) | Q(symbol__icontains=search_query))
     context = {'posts': posts, 'search_query': search_query}
     return render(request, 'coin_app/search.html', context)
-
 
 def get_ordered_lists(order_by):
     crypto_list = CryptoModel.objects.order_by(order_by)

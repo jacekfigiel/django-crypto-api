@@ -32,6 +32,7 @@ ALLOWED_HOSTS = ['*']
 # Application definition
 
 INSTALLED_APPS = [
+    'django_crontab',
     'coin_app.apps.CoinAppConfig',
     'rest_framework',
     'django.contrib.admin',
@@ -76,6 +77,7 @@ WSGI_APPLICATION = 'clone.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
+
 
 DATABASES = {
     'default': {
@@ -134,3 +136,10 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+CRONJOBS = [
+    ('*/23 * * * *', 'cron_crypto.populate_crypto'),
+    ('* */12 * * *', 'cron_metal.populate_metal'),
+    ('* */12 * * *', 'cron_news.populate_news')
+]
