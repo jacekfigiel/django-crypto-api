@@ -24,8 +24,8 @@ docker run -p 8000:8000 crypto-website
 
 2. Access the website in your browser at http://localhost:8000.
 
-
 Dependencies
+
 •	Python 3.9
 •	Django
 •	External APIs for crypto and precious metal prices (configured in the Django app)
