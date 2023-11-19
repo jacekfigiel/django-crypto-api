@@ -1,6 +1,6 @@
 # Crypto and Precious Metal Price Tracker
 
-This Django website provides real-time updates on cryptocurrency prices, precious metal prices, and the latest cryptocurrency news. It utilizes external APIs to fetch current data and presents it in a user-friendly interface.
+This Django website provides real-time(every 23 minutes) updates on cryptocurrency prices, precious metal prices, and the latest cryptocurrency news. It utilizes external APIs to fetch current data and presents it in a user-friendly interface.
 
 ## Features
 
@@ -36,25 +36,25 @@ Configuration
 bashCopy code
 
 git clone <repository_url> 
-3.	Navigate to the project directory:
+2.	Navigate to the project directory:
 bashCopy code
 
 cd crypto-website 
-4.	Install required Python packages:
+3.	Install required Python packages:
 
 bashCopy code
 pip install -r requirements.txt
 
-5.	Set up API keys for fetching cryptocurrency and precious metal prices. Add these keys in a .env file:
+4.	Set up API keys for fetching cryptocurrency and precious metal prices. Add these keys in a .env file:
 plaintextCopy code
 CRYPTO_API_KEY=your_crypto_api_key_here METAL_API_KEY=your_precious_metal_api_key_here
 
-7.	Run the Django server:
+5.	Run the Django server:
 
 bashCopy code
 python manage.py runserver 
 
-8.	Access the website in your browser at http://localhost:8000.
+6.	Access the website in your browser at http://localhost:8000.
 Folder Structure
 
 •	/app: Django application files.
