@@ -58,7 +58,9 @@ python manage.py runserver
 Folder Structure
 
 •	/app: Django application files.
+
 •	/static: Static files (CSS, JavaScript, etc.).
+
 •	/templates: HTML templates for the website
 
 
