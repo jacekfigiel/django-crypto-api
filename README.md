@@ -24,38 +24,31 @@ docker run -p 8000:8000 crypto-website
 
 2. Access the website in your browser at http://localhost:8000.
 
+4.	Access the website in your browser at http://localhost:8000.
 Dependencies
-Python 3.9
-Django
-External APIs for crypto and precious metal prices (configured in the Django app)
-
+•	Python 3.9
+•	Django
+•	External APIs for crypto and precious metal prices (configured in the Django app)
 Configuration
-1. Clone this repository:
-
-bash
-git clone <repository_url>
-2. Navigate to the project directory:
-
-bash
-cd crypto-website
-3. Install required Python packages:
-
-bash
-pip install -r requirements.txt
-4. Set up API keys for fetching cryptocurrency and precious metal prices. Add these keys in a .env file:
-
-plaintext
-CRYPTO_API_KEY=your_crypto_api_key_here
-METAL_API_KEY=your_precious_metal_api_key_here
-5. Run the Django server:
-
-bash
-python manage.py runserver
-6. Access the website in your browser at http://localhost:8000.
-
+1.	Clone this repository:
+bashCopy code
+git clone <repository_url> 
+2.	Navigate to the project directory:
+bashCopy code
+cd crypto-website 
+3.	Install required Python packages:
+bashCopy code
+pip install -r requirements.txt 
+4.	Set up API keys for fetching cryptocurrency and precious metal prices. Add these keys in a .env file:
+plaintextCopy code
+CRYPTO_API_KEY=your_crypto_api_key_here METAL_API_KEY=your_precious_metal_api_key_here 
+5.	Run the Django server:
+bashCopy code
+python manage.py runserver 
+6.	Access the website in your browser at http://localhost:8000.
 Folder Structure
-/app: Django application files.
-/static: Static files (CSS, JavaScript, etc.).
-/templates: HTML templates for the website.
+•	/app: Django application files.
+•	/static: Static files (CSS, JavaScript, etc.).
+•	/templates: HTML templates for the website
 
 
