@@ -46,6 +46,8 @@ git clone <repository_url>
 
 cd django-crypto-api
 ```
+and then
+
 ```bash
 
 cd clone
