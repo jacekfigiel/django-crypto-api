@@ -36,19 +36,21 @@ Dependencies
 Configuration
 
 1.	Clone this repository:
-bashCopy code
+```bash
 
 git clone <repository_url> 
+```
 
 2.	Navigate to the project directory:
-bashCopy code
+```bash
 
-cd crypto-website 
+cd crypto-website
+```
 3.	Install required Python packages:
 
-bashCopy code
+```bash
 pip install -r requirements.txt
-
+```
 
 4.	Set up API keys for fetching cryptocurrency and precious metal prices. Add these keys in a .env file:
 plaintextCopy code
@@ -56,8 +58,9 @@ CRYPTO_API_KEY=your_crypto_api_key_here METAL_API_KEY=your_precious_metal_api_ke
 
 5.	Run the Django server:
 
-bashCopy code
+```bash
 python manage.py runserver 
+```
 
 6.	Access the website in your browser at http://localhost:8000.
 Folder Structure
