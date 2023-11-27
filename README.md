@@ -1,6 +1,7 @@
 # Crypto and Precious Metal Price Tracker
 
 This Django website provides real-time(every 23 minutes) updates on cryptocurrency prices, precious metal prices, and the latest cryptocurrency news. It utilizes external APIs to fetch current data and presents it in a user-friendly interface.
+Coinmarcetcap na tym dzila opisac.........
 
 ## Features
 
@@ -22,18 +23,22 @@ This Django website provides real-time(every 23 minutes) updates on cryptocurren
 1. Run the Docker container:
 
 ```bash
-   docker run -p 8000:8000 crypto-website
+   docker run -e SECRET_KEY=abc -e DEBUG=true -p 8000:8000 crypto-website
 ```
 
-2. Access the website in your browser at http://localhost:8000.
+sectret key definition.......
 
-Dependencies
+2. Access the website in your browser at http://localhost:8000/coin_app/home/
+   
 
+### Python setup
+
+#### Dependencies
 •	Python 3.9
 •	Django
 •	External APIs for crypto and precious metal prices (configured in the Django app)
 
-Configuration
+####Configuration
 
 1.	Clone this repository:
 ```bash
