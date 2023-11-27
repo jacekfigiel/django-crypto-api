@@ -46,6 +46,10 @@ git clone <repository_url>
 
 cd django-crypto-api
 ```
+```bash
+
+cd clone
+```
 3.	Install required Python packages:
 
 ```bash
