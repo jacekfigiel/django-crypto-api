@@ -17,10 +17,13 @@ This Django website provides real-time(every 23 minutes) updates on cryptocurren
 
    ```bash
    docker build -t crypto-website .
+   ```
+   
 1. Run the Docker container:
 
-bash
-docker run -p 8000:8000 crypto-website
+```bash
+   docker run -p 8000:8000 crypto-website
+```
 
 2. Access the website in your browser at http://localhost:8000.
 
@@ -36,6 +39,7 @@ Configuration
 bashCopy code
 
 git clone <repository_url> 
+
 2.	Navigate to the project directory:
 bashCopy code
 
@@ -44,6 +48,7 @@ cd crypto-website
 
 bashCopy code
 pip install -r requirements.txt
+
 
 4.	Set up API keys for fetching cryptocurrency and precious metal prices. Add these keys in a .env file:
 plaintextCopy code
