@@ -44,7 +44,7 @@ git clone <repository_url>
 2.	Navigate to the project directory:
 ```bash
 
-cd crypto-website
+cd django-crypto-api
 ```
 3.	Install required Python packages:
 
