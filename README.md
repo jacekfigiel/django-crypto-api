@@ -69,6 +69,7 @@ python manage.py runserver
 ```
 
 6.	Access the website in your browser at http://localhost:8000/coin_app/home/
+   
 Folder Structure
 
 •	/app: Django application files.
