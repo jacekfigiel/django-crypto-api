@@ -38,7 +38,7 @@ sectret key definition.......
 •	Django
 •	External APIs for crypto and precious metal prices (configured in the Django app)
 
-####Configuration
+#### Configuration
 
 1.	Clone this repository:
 ```bash
