@@ -25,8 +25,15 @@ This Django-based website offers real-time(every 23 minutes) updates on various 
 ```bash
    docker run -e SECRET_KEY=abc -e DEBUG=true -p 8000:8000 crypto-website
 ```
+### What is secret key:
 
-sectret key definition.......
+In Django, the secret key is a cryptographic key used for securing and validating the integrity of sessions, CSRF tokens, and other security-related functionalities within the framework. It serves as a crucial security measure to encrypt and sign data, preventing tampering and unauthorized access to sensitive information. Keeping the secret key confidential is essential to ensure the overall security and integrity of a Django application.
+
+
+
+
+
+
 
 2. Access the website in your browser at http://localhost:8000/coin_app/home/
    
