@@ -1,7 +1,7 @@
 # Crypto and Precious Metal Price Tracker
 
-This Django website provides real-time(every 23 minutes) updates on cryptocurrency prices, precious metal prices, and the latest cryptocurrency news. It utilizes external APIs to fetch current data and presents it in a user-friendly interface.
-Coinmarcetcap na tym dzila opisac.........
+This Django-based website offers real-time(every 23 minutes) updates on various financial data, including cryptocurrency prices, precious metal values, and the latest cryptocurrency news. It relies significantly on external APIs to fetch current data and delivers it through a user-friendly interface. One of the critical components powering this platform is the integration of the Coinmarketcap API. This API serves as a primary source for obtaining accurate and up-to-date cryptocurrency prices.
+
 
 ## Features
 
